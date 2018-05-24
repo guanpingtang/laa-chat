@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
-    <mt-button type="primary" @click="test()">primary</mt-button>
+    <mt-button type="primary" @click="login()">登录</mt-button>
+    <mt-button type="primary" @click="redirect()">跳转</mt-button>
   </div>
 </template>
 
@@ -13,8 +14,28 @@ export default {
     }
   },
   methods: {
-    test() {
-      this.$messagebox('提示', '操作成功');
+    login() {
+      this.$axios.get('http://111.231.64.142:8080/auth/login', {
+        params: {
+          userAccount: "lvzhen",
+          password: "lvzhen"
+        }
+      }).then(res => {
+        if (res.status == 200) {
+          this.$router.push({
+            path: '/index'
+          });
+        } else {
+          this.$router.push({
+            path: '/index'
+          });
+        }
+      })
+    },
+    redirect() {
+      this.$router.push({
+        path: '/index'
+      });
     }
   }
 }
