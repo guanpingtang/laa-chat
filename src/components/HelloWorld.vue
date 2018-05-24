@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import {login} from '../service/login.js';
+import {login} from '@/service/login.js';
 
 export default {
   name: 'HelloWorld',

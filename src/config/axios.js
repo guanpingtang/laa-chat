@@ -1,4 +1,4 @@
-import {baseUrl} from './env';
+import {baseUrl} from '@/config/env';
 import axios from 'axios';
 
 export default async(url = '', data = {}, type = 'GET') => {
