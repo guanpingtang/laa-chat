@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import {login} from '../service/login.js';
+
 export default {
   name: 'HelloWorld',
   data () {
@@ -15,12 +17,7 @@ export default {
   },
   methods: {
     login() {
-      this.$axios.get('http://111.231.64.142:8080/auth/login', {
-        params: {
-          userAccount: "lvzhen",
-          password: "lvzhen"
-        }
-      }).then(res => {
+      login('lvzhen', 'lvzhen').then(res => {
         if (res.status == 200) {
           this.$router.push({
             path: '/index'
