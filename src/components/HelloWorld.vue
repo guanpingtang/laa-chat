@@ -17,7 +17,8 @@ export default {
   },
   methods: {
     login() {
-      login('lvzhen', 'lvzhen').then(res => {
+      login('1067418318', '123456').then(res => {
+        console.log(res);
         if (res.status == 200) {
           this.$router.push({
             path: '/index'
@@ -27,6 +28,8 @@ export default {
             path: '/index'
           });
         }
+      }).catch(error => {
+        console.log(error);
       })
     },
     redirect() {

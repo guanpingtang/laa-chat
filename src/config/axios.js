@@ -5,13 +5,17 @@ export default async(url = '', data = {}, type = 'GET') => {
     type = type.toUpperCase();
     url = baseUrl + url;
 
+    let response = null;
+
     if (type == 'GET') {
-        axios.get(url, {
+        response = axios.get(url, {
             params: data
         });
     }
 
     if (type == 'POST') {
-        axios.post(url, data);
+        response = axios.post(url, data);
     }
+
+    return response;
 }
